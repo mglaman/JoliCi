@@ -11,4 +11,5 @@ ENV TRAVIS_PHP_VERSION hhvm
 
 {% block before_install %}
 RUN echo 'date.timezone={{ timezone }}' | sudo tee -a /etc/hhvm/php.ini
+{{ parent() }}
 {% endblock %}
