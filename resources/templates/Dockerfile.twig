@@ -7,9 +7,10 @@ FROM jolicode/base:latest
 
 LABEL com.jolici.image="true"
 ENV WORKDIR $HOME/project
+ENV TRAVIS_BUILD_DIR $WORKDIR
 ADD . $WORKDIR
 WORKDIR $HOME/project
-RUN sudo chown travis:travis -R $HOME/project
+RUN sudo chown travis:travis -R $HOME
 
 {% block env %}{% endblock %}
 
